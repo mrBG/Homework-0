@@ -1,4 +1,6 @@
+
 import os
+import fire
 
 class CVHelper(object):
 
@@ -8,8 +10,8 @@ class CVHelper(object):
         """Constructor. Set verbose, if verbose = True print image paths"""
         self.verbose = verbose
 
-    def read_images_filename(self,  folder_path, recursive=False):
-        """Reads images filename in a folder
+    def read(self,  folder_path, recursive=False):
+        """Reads images filename in a folderf
 
         :folder_path: Folder path that contains the images
         :recursive: Look inside subfolders
@@ -46,13 +48,16 @@ class CVHelper(object):
         if self.verbose:
             print(image_list)
 
-        return image_list
 
 
+
+if __name__ =='__main__':
+    fire.Fire(CVHelper)
+""""
 path="../../Desktop/imagenes/zero/test_images/test_images"
-cvhelper = CVHelper(True)
+cvhelper = CVHelper(False)
 image_list = cvhelper.read_images_filename(path, False)
-
+"""
 
 
         # End code
